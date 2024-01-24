@@ -10,11 +10,11 @@ int main() {
     int T, a, b;
     int cnt = 1;
 
-    std::cin >> T;
+    cin >> T;
 
     while (T-- > 0) {
-        std::cin >> a >> b;
-        std::cout << "Case #" << cnt << ":" << a + b;
+        cin >> a >> b;
+        cout << "Case #" << cnt << ":" << a + b;
         cnt++;
     }
     return 0;
