@@ -1,5 +1,6 @@
 /*
-stoi 정리
+입력이 10:00 19:00으로 들어오므로 stoi (String을 Int 형으로 바꿔줌)을 사용 (#include <string>)
+stringvariable.substr(시작점, 개수) 를 하면 원하는 영역만 추출 가능
 */
 
 #include <iostream>
