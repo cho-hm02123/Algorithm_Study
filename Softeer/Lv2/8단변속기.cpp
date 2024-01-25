@@ -1,3 +1,12 @@
+/*
+문제 : 입력이 1 ~ 8 순서면 'ascending', 8 ~ 1 순서면 'descending', 둘 다 아니면 'mixed' 출력
+입력 : 1 ~ 8 자연수 8개
+
+풀이 : 
+ ascending인 경우 vector 생성, descending인 경우 vector 생성
+두 배열을 '=='으로 비교하기 위해 vector 사용
+*/
+
 #include <istream>
 #include <iostream>
 #include <vector>
