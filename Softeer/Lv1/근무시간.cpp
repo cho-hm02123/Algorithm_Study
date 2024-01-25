@@ -1,5 +1,6 @@
-
-
+/*
+stoi 정리
+*/
 
 #include <iostream>
 #include <istream>
