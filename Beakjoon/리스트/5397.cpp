@@ -1,3 +1,12 @@
+/*
+문제 : 문자열을 입력받아 규칙에 따른 최종 문자열 출력 '<' 커서 앞으로, '>' 커서 뒤로, '-' 앞 글자 지우기
+입력 : TC 개수, 1,000,000 자리 이하 문자열
+
+풀이 : 
+ list를 사용하여 풀이 -> iterator 관리 너무 어려운 것
+auto, 범위기반 for문 사용
+*/
+
 #include <istream>
 #include <iostream>
 #include <string>
