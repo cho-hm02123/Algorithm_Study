@@ -4,6 +4,7 @@
 
 풀이 : 
  처음에 while 안에 getline 넣어 줬는데 개망함 아 cin 버퍼 클리어 안해줘서 그런가 확인해보러 가야지
+그러네 TC 개수 N cin으로 받고 cin.igmore() 버퍼 초기화 안해줘서 그랬네
 */
 
 #include <iostream>
