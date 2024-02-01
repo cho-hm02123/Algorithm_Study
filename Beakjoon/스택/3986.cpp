@@ -1,3 +1,11 @@
+/*
+문제 : 괄호랑 똑같음
+입력 : 입력될 TC 개수, TC 개수 만큼의 문자열 입력
+
+풀이 : 
+ 처음에 while 안에 getline 넣어 줬는데 개망함 아 cin 버퍼 클리어 안해줘서 그런가 확인해보러 가야지
+*/
+
 #include <iostream>
 #include <istream>
 #include <string>
