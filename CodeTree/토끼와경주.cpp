@@ -1,8 +1,13 @@
+/*
+  시간초과때문에 우선순위 큐 사용
+  map <int, int> 사용하면 id와 index 매칭 가능
+  좌표, id, 기타 등등 복잡할 때 tuple 이런거 말고 struct로 묶어서 쓰기
+*/
+
 #include <iostream>
 #include <cmath>
 #include <algorithm>
 #include <vector>
-#include <tuple>
 #include <queue>
 #include <map>
 
