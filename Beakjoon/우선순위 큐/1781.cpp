@@ -16,9 +16,9 @@ int main() {
 
 	cin >> n;
 	for(int i = 0; i < n; i++) {
-		long long a, b;
-		cin >> a >> b;
-		v[a].push_back(b);
+		long long del, cnt;
+		cin >> del >> cnt;
+		v[del].push_back(cnt);
 	}
 	int sum = 0;
 	for (int i = 200001; i != 0; i--) {
