@@ -1,7 +1,3 @@
-/*
-  왜 fig 크기에 따라 답이 맞고 틀리냐
-*/
-
 #include <iostream>
 #include <cmath>
 #include <algorithm>
@@ -14,7 +10,7 @@ using namespace std;
 #define Y second
 
 int R, C, k, d, cnt, m;
-int fig[71][71]; // 우주선 위치에 우주선 번호 저장
+int fig[72][72]; // 우주선 위치에 우주선 번호 저장
 int ex[1003]; // 우주선 번호 인덱스에 출구 인덱스 저장
 vector<pair<int, int>> v; // 중심좌표 저장할거임
 int score; // 점수 저장
@@ -51,49 +47,103 @@ void save() {
 			int mm = xx + 1;
 			if (mm > m)
 				m = mm;
-			
+
 			q.push({ xx, yy });
 			flag[didx] = 1;
 		}
 	}
-score += m;
+	score += m;
 }
 
 void gor() {
 	int x = p.X;
 	int y = p.Y;
 
-	if (y == C - 1)
+	if (y == C - 1) {
 		cnt = 0;
-	else if (fig[x - 1][y + 1] == 0 && fig[x][y + 2] == 0 && fig[x + 1][y + 1] == 0 && fig[x + 1][y + 2] == 0 && fig[x + 2][y + 1] == 0) {
-		p = make_pair(x + 1, y + 1);
-		if (d == 3)
-			d = 0;
-		else
-			d++;
-		cnt = 3;
+		return;
 	}
-	else
-		cnt = 0;
-
+	if (x == -1) {
+		if (fig[x + 2][y + 1] == 0) {
+			p = make_pair(x + 1, y + 1);
+			if (d == 3)
+				d = 0;
+			else
+				d++;
+			cnt = 3;
+		}
+		else
+			cnt = 0;
+	}
+	else if (x == 0) {
+		if (fig[x + 1][y + 1] == 0 && fig[x + 1][y + 2] == 0 && fig[x + 2][y + 1] == 0) {
+			p = make_pair(x + 1, y + 1);
+			if (d == 3)
+				d = 0;
+			else
+				d++;
+			cnt = 3;
+		}
+		else
+			cnt = 0;
+	}
+	else {
+		if (fig[x - 1][y + 1] == 0 && fig[x][y + 2] == 0 && fig[x + 1][y + 1] == 0 && fig[x + 1][y + 2] == 0 && fig[x + 2][y + 1] == 0) {
+			p = make_pair(x + 1, y + 1);
+			if (d == 3)
+				d = 0;
+			else
+				d++;
+			cnt = 3;
+		}
+		else
+			cnt = 0;
+	}
 }// 우주선 오른쪽 이동 cnt = 1
 
 void gol() {
 	int x = p.X;
 	int y = p.Y;
-	if (y == 2)
+	if (y == 2) {
 		cnt = 1;
-	else if (fig[x - 1][y - 1] == 0 && fig[x][y - 2] == 0 && fig[x + 1][y - 1] == 0 && fig[x + 1][y - 2] == 0 && fig[x + 2][y - 1] == 0) {
-		p = make_pair(x + 1, y - 1);
-		if (d == 0)
-			d = 3;
-		else
-			d--;
-		cnt = 3;
+		return;
 	}
-	else 
-		cnt = 1;
-
+	if (x == -1) {
+		if (fig[x + 2][y - 1] == 0) {
+			p = make_pair(x + 1, y - 1);
+			if (d == 0)
+				d = 3;
+			else
+				d--;
+			cnt = 3;
+		}
+		else
+			cnt = 1;
+	}
+	else if (x == 0) {
+		if (fig[x + 1][y - 1] == 0 && fig[x + 1][y - 2] == 0 && fig[x + 2][y - 1] == 0) {
+			p = make_pair(x + 1, y - 1);
+			if (d == 0)
+				d = 3;
+			else
+				d--;
+			cnt = 3;
+		}
+		else
+			cnt = 1;
+	}
+	else {
+		if (fig[x - 1][y - 1] == 0 && fig[x][y - 2] == 0 && fig[x + 1][y - 1] == 0 && fig[x + 1][y - 2] == 0 && fig[x + 2][y - 1] == 0) {
+			p = make_pair(x + 1, y - 1);
+			if (d == 0)
+				d = 3;
+			else
+				d--;
+			cnt = 3;
+		}
+		else
+			cnt = 1;
+	}
 }// 우주선 왼쪽이동 cnt = 2
 
 void god() {
@@ -101,7 +151,7 @@ void god() {
 	int y = p.Y;
 	if (x == R - 1)
 		cnt = 0;
-	else if (fig[x + 2][y] == 0 && fig[x + 1][y - 1] == 0 && fig[x + 1][y + 1] == 0) 
+	else if (fig[x + 2][y] == 0 && fig[x + 1][y - 1] == 0 && fig[x + 1][y + 1] == 0)
 		p = make_pair(x + 1, y);
 	else
 		cnt = 2;
@@ -120,14 +170,14 @@ int main() {
 		cin >> c >> d;
 		p = make_pair(-1, c);
 
-		while(1){
+		while (1) {
 			if (cnt == 3)
 				god();
 			if (cnt == 2)
 				gol();
 			if (cnt == 1)
 				gor();
-			if(cnt == 0)
+			if (cnt == 0)
 				break;
 		}
 		v.push_back({ p.X,p.Y });
