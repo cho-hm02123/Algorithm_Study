@@ -1,3 +1,9 @@
+/*
+	<algorithm>에 이분탐색 stl
+	사용 전에 오름차순 정렬 해야함
+	binary_search(시작,끝,타겟)  > 존재하면 True, 없으면 False 반환
+*/
+
 #include <iostream>
 #include <cmath>
 #include <algorithm>
