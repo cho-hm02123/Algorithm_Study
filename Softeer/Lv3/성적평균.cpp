@@ -1,3 +1,7 @@
+/*
+    소수점 자리수 맞추기
+*/
+
 #include<iostream>
 #include <cmath>
 #include <algorithm>
