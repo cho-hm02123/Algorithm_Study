@@ -15,7 +15,7 @@ long long arr[1001][1001];
 long long dx[2] = {0,1};
 long long dy[2] = {1,0};
 vector <long long> v;
-vector <pair <long long, long long>> v2;
+vector <pair <int, int>> v2;
 
 void bt(int a, int b){
     if(a == n-1 && b == n-1){
