@@ -12,8 +12,8 @@ using namespace std;
 int n;
 long long m,sum;
 long long arr[1001][1001];
-long long dx[2] = {0,1};
-long long dy[2] = {1,0};
+int dx[2] = {0,1};
+int dy[2] = {1,0};
 vector <long long> v;
 vector <pair <int, int>> v2;
 
