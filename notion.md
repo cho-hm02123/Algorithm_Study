@@ -14,6 +14,6 @@
   * **float**  : 지수(8), 수(23)
   * **double** : 지수(11), 수(52)
  
-    double에 long long 범위를 지정할 수 없음.
+  double에 long long 범위를 지정할 수 없음.
  
-    오차가 필연적이므로 double을 쓰는게 낫다.
+  오차가 필연적이므로 double을 쓰는게 낫다.
