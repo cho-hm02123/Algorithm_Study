@@ -9,3 +9,7 @@
   * short       (2byte) : 2<sup>15</sup> -1 (32767)
   * int         (4byte) : 2<sup>31</sup> -1 (2.1x10<sup>9</sup>)
   * long long   (8byte) : 2<sup>63</sup> -1 (9.2x10<sup>18</sup>)
+
+* 실수형
+  * float
+  * double
