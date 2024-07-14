@@ -27,7 +27,7 @@
 # STL
 ----
 ### 1. Algorithm
-    * **sort**
+  * **sort**
 
 
 # Subject
