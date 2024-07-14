@@ -27,7 +27,9 @@
 # STL
 ----
 ### 1. Algorithm
-  * **sort**
+  * **sort** : 기본 오름차순 정렬 (작은 것부터 순서대로) > 세번째 인자에 함수를 넣어 원하는 규칙대로 정렬 가능
+    * 배열 : sort(arr, arr + 크기)
+    * 벡터 : sort(v.begin(), v.end())
 
 
 # Subject
