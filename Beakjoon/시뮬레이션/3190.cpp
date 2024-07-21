@@ -13,6 +13,10 @@
 *		 뱀의 방향 전환 정보 x, c -> 게임 시작으로 부터 x초가 끝난 후 (왼 : L, 오 : D 방향으로 90도 회전)
 * 
 * 출력 : 게임이 몇초에 끝나는지
+* 
+*     위
+* 좌      오
+*    아래
 */
 
 #include <iostream>
@@ -37,7 +41,7 @@ bool cal(int tm, char c) {
         int hx = q.front().X + dx[hd];
         int hy = q.front().Y + dy[hd];
 
-        if(hx < 1 || hy < 1 || hx > n-1 || hy > n-1) return false;
+        if(hx < 1 || hy < 1 || hx > n || hy > n) return false;
 
         for(int i = 0; i < q.size(); i++)
                 if(q[i].X == hx && q[i].Y == hy) return false;
@@ -51,12 +55,16 @@ bool cal(int tm, char c) {
 
         if(cnt == tm){
             if(c == 'L'){
-            hd--;
-            if(hd < 0) hd = 3;
+                if (hd == 0)
+                    hd = 3;
+                else
+                    hd--;
             }
             else if(c == 'D'){
-            hd++;
-            if(hd > 3) hd = 0;
+                if (hd == 3)
+                    hd = 0;
+                else
+                    hd++;
             }
             return true;
 	    }
