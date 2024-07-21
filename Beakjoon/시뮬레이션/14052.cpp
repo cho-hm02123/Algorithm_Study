@@ -13,6 +13,8 @@
 *		지도 모양
 * 
 * 출력: 안전 구역 최대 크기
+* 
+* 풀이: 백트래킹으로 빈칸에 벽 세울 수 있는 경우 다 구해서 전수조사
 */
 
 #include <iostream>
@@ -97,13 +99,11 @@ int main() {
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < m; j++) {
 			cin >> arr[i][j];
-			if (arr[i][j] == 0) {
+			if (arr[i][j] == 0)
 				v.push_back({ i,j });
-				cnt++;
-			}
 		}
 
-	cnt -= 3;
+	cnt = v.size() - 3;
 	bc(0);
 
 	cout << mm;
