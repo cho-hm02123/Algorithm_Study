@@ -18,16 +18,49 @@
 #include <iostream>
 #include <cmath>
 #include <algorithm>
+#include <queue>
 using namespace std;
 
+#define X first
+#define Y second
+
 int n, k, l, cnt;
-int arr[101][101];
 int hd; // 0: 위, 1 : 오 , 2 : 아래, 3 : 좌
+bool arr[101][101];
+int dx[4] = {-1, 0, 1, 0};
+int dy[4] = {0, 1, 0, -1};
+deque <pair<int,int>> q;
 
 bool cal(int tm, char c) {
-	while (cnt != tm) {
+	while (1) {
 		cnt++;
-	}
+        int hx = q.front().X + dx[hd];
+        int hy = q.front().Y + dy[hd];
+
+        if(hx < 1 || hy < 1 || hx > n-1 || hy > n-1) return false;
+
+        for(int i = 0; i < q.size(); i++)
+                if(q[i].X == hx && q[i].Y == hy) return false;
+
+        if(arr[hx][hy])
+            arr[hx][hy] = 0;
+        else
+            q.pop_back();
+
+        q.push_front({hx,hy});
+
+        if(cnt == tm){
+            if(c == 'L'){
+            hd--;
+            if(hd < 0) hd = 3;
+            }
+            else if(c == 'D'){
+            hd++;
+            if(hd > 3) hd = 0;
+            }
+            return true;
+	    }
+    }
 }
 
 int main() {
@@ -36,9 +69,10 @@ int main() {
 	cout.tie(0);
 
 	hd = 1;
+    q.push_front({1,1});
 
 	cin >> n >> k;
-	for (int i = 0; i < k; i++) {
+	while (k--) {
 		int x, y;
 		cin >> x >> y;
 		arr[x][y] = 1;
@@ -50,11 +84,35 @@ int main() {
 		char c;
 		cin >> x >> c;
 
-		if (!cal(x, c))
-			break;
+		if (!cal(x, c)){
+            cout << cnt;
+            return 0;
+        }
 	}
 
-	cout << cnt;
+    while (1) {
+		cnt++;
+        int hx = q.front().X + dx[hd];
+        int hy = q.front().Y + dy[hd];
+
+        if(hx < 1 || hy < 1 || hx > n-1 || hy > n-1){
+            cout << cnt;
+            return 0;
+        };
+
+        for(int i = 0; i < q.size(); i++)
+                if(q[i].X == hx && q[i].Y == hy){
+                    cout << cnt;
+                    return 0;
+                }
+
+        if(arr[hx][hy])
+            arr[hx][hy] = 0;
+        else
+            q.pop_back();
+
+        q.push_front({hx,hy});
+	}
 
 	return 0;
 }
