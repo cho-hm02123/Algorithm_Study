@@ -21,40 +21,73 @@
 입력 : N, L, 지도 높이
 
 출력 : 지나갈 수 있는 길의 개수
+
+풀이 : 4 2
+       1 1 2 2 
+       1 2 2 2 
+       2 2 2 2 
+       2 2 2 2  의 (0,0), (0,1), (1,0) 처럼 겹쳐도 상관 없음
 */
 
 #include <iostream>
 #include <cmath>
 #include <algorithm>
+#include <vector>
 using namespace std;
 
 int n, l, cnt;
 int arr[101][101];
-int flag[101][101];
 
-int main(){
+int cal(vector <int>& v) {
+    int len = 1;
+    int id = 0;
+
+    while (id < n - 1) {
+        if (abs(v[id] - v[id + 1]) > 1) return 0;
+        if (v[id] == v[id + 1]) {
+            id++;
+            len++;
+        }
+        else if (v[id] < v[id + 1]) {
+            if (len < l) return 0;
+            id++;
+            len = 1;
+        }
+        else if (v[id] > v[id + 1]) {
+            if (id + l >= n) return 0;
+            for (int i = id + 1; i < id + l+1; i++)
+                if (v[i] != v[id+1]) return 0;
+
+            id += l;
+            len = 0;
+        }
+    }
+    return 1;
+}
+
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
 
     cin >> n >> l;
-    for(int i = 0; i < n; i++)
-        for(int j = 0; j < n; j++)
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
             cin >> arr[i][j];
 
-    int k,num;
-    for(int i = 0; i < n; i++){
-        num = 0;
-        for(int j = 0; j < n; j++){
-            if(j == 0)
-                k = arr[i][j];
-
-            if(abs(arr[i][j] - k) == 1){
-                k = arr[i][j];
-                num = 0;
-            }
-        }
+    for (int i = 0; i < n; i++) {
+        vector <int> v;
+        for (int j = 0; j < n; j++) v.push_back(arr[i][j]);
+        cnt += cal(v);
     }
+
+    for (int j = 0; j < n; j++) {
+        vector <int> v;
+        for (int i = 0; i < n; i++) v.push_back(arr[i][j]);
+        cnt += cal(v);
+    }
+
+    cout << cnt;
 
     return 0;
 }
