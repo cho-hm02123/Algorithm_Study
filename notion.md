@@ -32,7 +32,7 @@
     * 벡터 : sort(v.begin(), v.end())
    
 ### 2. Map
-  * **map** : 왼쪽 값을 Key로, 오른쪽 값을 Value로 사용함 > 트리 형태로 탐색속도 높임(Key를 기준으로 정렬)
+  * **map** : 왼쪽 값을 Key로, 오른쪽 값을 Value로 사용함 > 트리 형태로 탐색속도 높임 (Key를 기준으로 정렬)
     * 선언 : map<char, int> m;
     * 대입 : m.insert(make_pair('C', 2)); OR m['C'] = 2;
     * 원소 삭제 : m.erase(key);
