@@ -30,6 +30,16 @@
   * **sort** : 기본 오름차순 정렬 (작은 것부터 순서대로) > 세번째 인자에 함수를 넣어 원하는 규칙대로 정렬 가능
     * 배열 : sort(arr, arr + 크기)
     * 벡터 : sort(v.begin(), v.end())
+   
+### 2. Map
+  * **map** : 왼쪽 값을 Key로, 오른쪽 값을 Value로 사용함 > 트리 형태로 탐색속도 높임(Key를 기준으로 정렬)
+    * 선언 : map<char, int> m;
+    * 대입 : m.insert(make_pair('C', 2)); OR m['C'] = 2;
+    * 원소 삭제 : m.erase(key);
+    * 전체 삭제 : m.clear();
+    * value 탐색 : m.find(key); > 존재 시 iterator를 반환, 없으면 m.end() 반환
+    * key 탐색 : m.count(key); > 존재하면 1, 아니면 0
+    * 기타 : size, empty() 있음
 
 
 # Subject
