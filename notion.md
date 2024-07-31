@@ -40,6 +40,9 @@
     * value 탐색 : m.find(key); > 존재 시 iterator를 반환, 없으면 m.end() 반환
     * key 탐색 : m.count(key); > 존재하면 1, 아니면 0
     * 기타 : size, empty() 있음
+   
+### 3. String
+  * **lenght** : 문자열의 길이를 반환 > a.lenght();
 
 
 # Subject
