@@ -21,28 +21,27 @@ using namespace std;
 int n, mmm;
 pair <int, int> arr[16]; // t, p
 
-int bt(int k, int sum){
-    int st = k+1;
-    
+int bt(int k) {
+
     int mm = 0;
-    for(int i = st; i<n+1; i++){
-                                    
-        bt(k+arr[i].X, sum + arr[i].Y);
-        mm = max(mm, sum+arr[i].Y);
+    for (int i = k; i < n + 1; i++) {
+        if (i + arr[i].X > n+1) continue;
+       // bt(i + arr[i].X, sum + arr[i].Y);
+        mm = max(mm, arr[i].Y + bt(i + arr[i].X));
     }
     return mm;
 }
 
-int main(){
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
 
     cin >> n;
-    for(int i = 1; i < n+1; i++)
+    for (int i = 1; i < n + 1; i++)
         cin >> arr[i].X >> arr[i].Y;
 
-    cout << bt(0,0);
+    cout << bt(1);
 
     return 0;
 }
