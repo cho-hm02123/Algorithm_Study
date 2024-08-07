@@ -33,7 +33,7 @@
     * 벡터 : sort(v.begin(), v.end())
    
   * **binary_search** : 이분탐색(O(logN))으로 target의 존재 여부를 알 수 있음 > 존재하면 True, 존재하지 않으면 False  [주의: 오름차순 정렬 되어있어야 함]
-  &larr 원리 * : 
+  \rightarrow\ 원리 : 
     * binary_search(begin(), end(), target)
    
 ### 2. Map
