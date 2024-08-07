@@ -2,6 +2,7 @@
 ----
 ### 1. 시간복잡도
 #####  O(1) < O(logN) < O(N) < O(NlogN) < O(n^2^) < O(2^N^) < O(N!)
+#####  1초에 약 1억
 
 ### 2. 자료형
 * 정수형
@@ -30,6 +31,9 @@
   * **sort** : 기본 오름차순 정렬 (작은 것부터 순서대로) > 세번째 인자에 함수를 넣어 원하는 규칙대로 정렬 가능
     * 배열 : sort(arr, arr + 크기)
     * 벡터 : sort(v.begin(), v.end())
+   
+  * **binary_search** : 이분탐색(O(logN))으로 target의 존재 여부를 알 수 있음 > 존재하면 True, 존재하지 않으면 False  [주의: 오름차순 정렬 되어있어야 함]
+    * binary_search(begin(), end(), target)
    
 ### 2. Map
   * **map** : 왼쪽 값을 Key로, 오른쪽 값을 Value로 사용함 > 트리 형태로 탐색속도 높임 (Key를 기준으로 정렬)
