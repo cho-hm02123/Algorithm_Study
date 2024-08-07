@@ -46,7 +46,7 @@
     * uppper_bound(begin(), end(), target) : target 값을 초과하는 최초의 index를 반환
     * lower_bound(begin(), end(), target) : target 값이 최초 등장하는 index를 반환 (만약 target이 존재하지 않으면 target을 초과하는 값이 최초 등장하는 index 즉, upper_bound와 동일)
       
-    $\rightarrow\$ upper와 lower를 이용하여 target의 개수(upper - lower) 및 오름차순을 유지하며 target을 삽입할 위치를 알 수 있음
+      $\rightarrow\$ upper와 lower를 이용하여 target의 개수(upper - lower) 및 오름차순을 유지하며 target을 삽입할 위치를 알 수 있음
 
     * unique : 중복 제거 함수로 v.erase(unique(v.begin(), v.end())를 하면 vector 내에 중복 원소를 지워준다 (이도 마찬가지로 오름차순 정렬이 필수)
 
