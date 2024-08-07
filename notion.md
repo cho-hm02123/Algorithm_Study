@@ -34,7 +34,7 @@
    
   * **binary_search** : 이분탐색(O(logN))으로 target의 존재 여부를 알 수 있음 > 존재하면 True, 존재하지 않으면 False  [주의: 오름차순 정렬 되어있어야 함]
     
-    > $\rightarrow\$ 원리 : st = begin(), en = end(), mid = st+en/2 라고 할 때
+    #### $\rightarrow\$ 원리 : st = begin(), en = end(), mid = st+en/2 라고 할 때
     
       > 1. target < mid 라면 en = mid -1
     
@@ -42,8 +42,11 @@
     
       > 3. en < st 면 target이 존재하지 않음
     
-    * binary_search(begin(), end(), target)
-   
+    * binary_search(begin(), end(), target) : target 값의 존재 여부를 알 수 있음
+    * uppper_bound(begin(), end(), target) : target 값을 초과하는 최초의 index를 반환
+    * lower_bound(begin(), end(), target) : target 값이 최초 등장하는 index를 반환 (만약 target이 존재하지 않으면 target을 초과하는 값이 최초 등장하는 index 즉, upper_bound와 동일)
+    $\rightarrow\$ upper와 lower를 이용하여 target의 개수(upper - lower) 및 오름차순을 유지하며 target을 삽입할 위치를 알 수 있음
+    
 ### 2. Map
   * **map** : 왼쪽 값을 Key로, 오른쪽 값을 Value로 사용함 > 트리 형태로 탐색속도 높임 (Key를 기준으로 정렬)
     * 선언 : map<key, value> m;
