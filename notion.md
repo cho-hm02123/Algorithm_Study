@@ -36,11 +36,11 @@
     
     #### $\rightarrow\$ 원리 : st = begin(), en = end(), mid = st+en/2 라고 할 때
     
-    ##### 1. target < mid 라면 en = mid -1
+      ##### 1. target < mid 라면 en = mid -1
     
-    ##### 2. target > mid 라면 st = mid +1
+      ##### 2. target > mid 라면 st = mid +1
     
-    ##### 3. en < st 면 target이 존재하지 않음
+      ##### 3. en < st 면 target이 존재하지 않음
     
     * binary_search(begin(), end(), target)
    
