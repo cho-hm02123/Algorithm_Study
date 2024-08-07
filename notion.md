@@ -34,13 +34,13 @@
    
   * **binary_search** : 이분탐색(O(logN))으로 target의 존재 여부를 알 수 있음 > 존재하면 True, 존재하지 않으면 False  [주의: 오름차순 정렬 되어있어야 함]
     
-    #### $\rightarrow\$ 원리 : st = begin(), en = end(), mid = st+en/2 라고 할 때
+    > $\rightarrow\$ 원리 : st = begin(), en = end(), mid = st+en/2 라고 할 때
     
-      ##### 1. target < mid 라면 en = mid -1
+      > 1. target < mid 라면 en = mid -1
     
-      ##### 2. target > mid 라면 st = mid +1
+      > 2. target > mid 라면 st = mid +1
     
-      ##### 3. en < st 면 target이 존재하지 않음
+      > 3. en < st 면 target이 존재하지 않음
     
     * binary_search(begin(), end(), target)
    
