@@ -8,6 +8,8 @@
 * 입력: N, C, 집 좌표
 * 
 * 출력: 두 공유기 사이의 최대 거리
+* 
+* 풀이: parametic search로 0 ~ 입력 최대 값 까지의 수를 이분탐색 mid를 통해 정한 뒤 lower_bound를 이용해서 가능성을 판단
 */
 
 #include <iostream>
@@ -21,7 +23,7 @@ using namespace std;
 int n, c;
 ll a[200001];
 
-int cal(int k) {
+int cal(ll k) {
 	int cnt = 0;
 	int idx = 0;
 
@@ -43,11 +45,11 @@ int main() {
 
 	sort(a, a + n);
 
-	int st = 0;
-	int en = a[n - 1];
+	ll st = 0;
+	ll en = a[n - 1];
 
 	while (st < en) {
-		int mid = (st + en+1) / 2;
+		ll mid = (st + en+1) / 2;
 
 		if (cal(mid)) st = mid;
 		else
