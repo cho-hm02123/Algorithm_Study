@@ -77,4 +77,4 @@ ex) int arr[2][100][100] 이라는 3차원 배열을 만들고 조건 실행 유
 #### Parametric Search
 조건을 만족하는 최소/최댓값을 구하는 문제(최적화 문제)를 결정 문제로 변환해 이분 탐색을 수행할 수 있다.
 
-ex) <img align="left" width="400" height="200" src="./img/parametic_graph.PNG">
+ex) <img align="left" width="600" height="300" src="./img/parametic_graph.PNG">
