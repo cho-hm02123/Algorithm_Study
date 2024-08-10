@@ -53,8 +53,11 @@
     * unique : 중복 제거 함수로 v.erase(unique(v.begin(), v.end())를 하면 vector 내에 중복 원소를 지워준다 (이도 마찬가지로 오름차순 정렬이 필수)
 
       $\rightarrow\$ 본래 unique만 사용하면 중복을 없애고 남은 원소를 0번 index 부터 채운 후 남은 공간엔 쓰레기 값이 들어가 쓰레기 값이 시작되는 iter를 반환해 주지만, erase를 사용해 쓰레기 값을 삭제해 주는 것임
+
+### 2. String
+  * **lenght** : 문자열의 길이를 반환 > a.lenght();
     
-### 2. Map
+### 3. Map
   * **map** : 왼쪽 값을 Key로, 오른쪽 값을 Value로 사용함 > 트리 형태로 탐색속도 높임 (Key를 기준으로 정렬)
     * 선언 : map<key, value> m;
     * 대입 : m.insert(make_pair('C', 2)); OR m['C'] = 2; (key가 char형, value가 int형 이라 가정하고 예시)
@@ -64,8 +67,20 @@
     * key 탐색 : m.count(key); > 존재하면 1, 아니면 0
     * 기타 : size, empty() 있음
    
-### 3. String
-  * **lenght** : 문자열의 길이를 반환 > a.lenght();
+### 4. set
+  * **unordered_set <type> name** : 해시 테이블로 구현되어있으며 정렬되어있지 않음(원소의 크기 혹은 삽입 순서로도 들어있지 않다) 대신 O(1), 또한 중복이 허용되지 않음
+  * 삽입: name.insert(a) -> 이미 중복된 값이 있을 경우 아무 일도 일어나지 않음
+  * 삭제: name.erase(a) -> 인자을 입력으로 줬을 때 해당 인자가 내부에 존재하면 삭제 후 1을 반환, 그렇지 않으면 0을 반환
+  * 탐색: name.find(a) -> 입력 인자가 있다면 iterator를 반환, 그렇지 않으면 name.end()를 반환
+  * 카운트: name.count(a) -> 입력 인자가 몇개 들어있는지 해당 함수는 중복을 허락하지 않으므로 존재하면 1, 존재하지 않으면 0 반환
+
+  * **unordered_multiset <type> name** : 위의 unordered_set과 거의 동일하지만 중복을 허용함
+  * 삭제: name.erase(a) -> 입력 인자 a의 값이 모두 삭제됨 (주의)
+
+     -> 원소를 하나만 지우고 싶다면 name.erase(name.find(a))를 해야 하나의 iter만 반환하므로 하나만 지워짐
+
+  * **unordered_map<type(key), type(vlaue)> name** : 키에 대응되는 값을 찾아줌
+  * 주의: 만약 name["helloword"] = 1 인 경우에 name["helloword"] = 10을 하게 되면 새로운 ("helloword", 10)이 추가되는게 아닌 기존에 있던 것에 값을 덮어 쓰게 됨
 
 
 # Subject
@@ -87,6 +102,9 @@ ex) BOJ [랜선 자르기](https://github.com/cho-hm02123/Algorithm_Study/blob/m
 Key에 대응되는 값을 저장하는 자료 구조로 임의의 길이의 데이터를 고정된 길이의 데이터(해시)로 대응시킴
 
 ex) 16자리의 카드 번호 전체를 보는 것이 아닌 뒤 네자리만 봄
-주의 사항 : 서로 다른 key가 같은 해시 값을 가지게 될 경우 충돌이 생김
 
-(insert, erase, find, update 모두 O(1))
+주의 사항 : 서로 다른 key가 같은 해시 값을 가지게 될 경우 충돌이 발생
+
+해결방안: 해당 인덱스에 연결 리스트를 추가(chaining) OR 다음 칸에 저장(open addressing) -> STL은 Chaining 방식
+
+(충돌이 없을 때 insert, erase, find, update 모두 O(1))
