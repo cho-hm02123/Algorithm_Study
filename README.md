@@ -107,4 +107,4 @@ ex) 16자리의 카드 번호 전체를 보는 것이 아닌 뒤 네자리만 �
 
 해결방안: 해당 인덱스에 연결 리스트를 추가(chaining) OR 다음 칸에 저장(open addressing) -> STL은 Chaining 방식
 
-<img align="left" src="./img/해시.PNG"> //**출처** : BaaaaaaaarkingDog [실전 알고리즘] 0x15강 해시 ppt 16
+<img align="left" src="./img/해시.PNG"> //출처 : BaaaaaaaarkingDog [실전 알고리즘] 0x15강 해시 ppt 16//
