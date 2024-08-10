@@ -67,7 +67,7 @@
     * key 탐색 : m.count(key); > 존재하면 1, 아니면 0
     * 기타 : size, empty() 있음
    
-### 4. Set
+### 4. unordered_set
   * **unordered_set <type> name** : 해시 테이블로 구현되어있으며 정렬되어있지 않음(원소의 크기 혹은 삽입 순서로도 들어있지 않다) 대신 O(1), 또한 중복이 허용되지 않음
   * 삽입: name.insert(a) -> 이미 중복된 값이 있을 경우 아무 일도 일어나지 않음
   * 삭제: name.erase(a) -> 인자을 입력으로 줬을 때 해당 인자가 내부에 존재하면 삭제 후 1을 반환, 그렇지 않으면 0을 반환
@@ -79,6 +79,7 @@
 
      -> 원소를 하나만 지우고 싶다면 name.erase(name.find(a))를 해야 하나의 iter만 반환하므로 하나만 지워짐
 
+### 5. unordered_map
   * **unordered_map<type(key), type(vlaue)> name** : 키에 대응되는 값을 찾아줌
   * 주의: 만약 name["helloword"] = 1 인 경우에 name["helloword"] = 10을 하게 되면 새로운 ("helloword", 10)이 추가되는게 아닌 기존에 있던 것에 값을 덮어 쓰게 됨
 
