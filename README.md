@@ -98,6 +98,7 @@ ex) BOJ [랜선 자르기](https://github.com/cho-hm02123/Algorithm_Study/blob/m
 
 <img align="left" width="600" height="300" src="./img/parametic_graph.PNG">**주의** 그래프 개형이 증가/감소 해야함 증감을 하며 Y가 여러 개일 경우 불가능
 
+
 ### 0x15 해시
 Key에 대응되는 값을 저장하는 자료 구조로 임의의 길이의 데이터를 고정된 길이의 데이터(해시)로 대응시킴 (충돌이 없을 때 insert, erase, find, update 모두 O(1))
 
