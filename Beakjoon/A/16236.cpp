@@ -1,4 +1,4 @@
-/* https://www.acmicpc.net/problem/16236 아기상어
+/* https://www.acmicpc.net/problem/16236
 * 
 *  1h 54m 50s
 * 
