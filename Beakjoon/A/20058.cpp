@@ -1,4 +1,4 @@
-/* https://www.acmicpc.net/problem/20056 마법사 상어와 파이어볼
+/* https://www.acmicpc.net/problem/20056 마법사 상어와 파이어볼 
 *
 * 3h 58m 55s 이상한데 집착하다 시간 만수르됨
 *
