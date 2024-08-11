@@ -1,4 +1,4 @@
-/* https://www.acmicpc.net/problem/20057 마법사 상어와 토네이도
+/* https://www.acmicpc.net/problem/20057 마법사 상어와 토네이도 
 * 
 *  1h 44m 01s 
 *  아 잘 풀어놓고 while문 조건 이상하게 해서 디버깅 오래걸렸네
