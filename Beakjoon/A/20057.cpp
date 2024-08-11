@@ -104,8 +104,7 @@ int main() {
 		MoveTornado();
 		int next_d = (cur.d + 1) % 4;
 		if (flag[cur.x + dx[next_d]][cur.y + dy[next_d]]) continue; // 방향 아직 바꿀 때 안됐으면
-		else
-			cur.d = next_d;
+		else cur.d = next_d;
 	}
 
 	cout << ans;
