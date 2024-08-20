@@ -18,9 +18,6 @@
 #include <vector>
 using namespace std;
 
-#define X first
-#define Y second
-
 int n, ans;
 int indegree[10001];
 int tm[10001];
