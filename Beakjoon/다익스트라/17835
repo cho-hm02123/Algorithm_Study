@@ -1,0 +1,96 @@
+/* https://www.acmicpc.net/problem/17835 면접보는 승범이네
+* 
+* 뮨제: 면접자들은 서로 다른 N개의 도시에 거주, N개의 도시 중 K개의 도시에 면접장을 배치
+*	도시끼리는 단방향으로 연결, 거리도 다름 두 도시 사이에 도로가 없을 수도 있고 도로가 여러개일 수도
+*	단, 면접장은 어떻게든 갈 수 있음
+*	모든 면접자가 가장 가까운 면접장으로
+*	면접장까지 거리가 가장 먼 도시 구하기
+* 
+* 입력: 도시의 수 N, 도로의 수 M, 면접장의 수 K
+*	M개의 u, v, c (u->v 길이 c)
+*	K개의 면접장이 있는 도시 번호\
+* 
+* 출력: 면접장까지 거리가 가장 먼 도시의 번호 출력 여러개면 가장 작은 번호 출력
+*	다음 줄에 거리 출력
+* 
+* 풀이: 면접장에서 도시로 가는 거리 구할거라 u->v가 아닌 v->u로 저장해줘야 함
+*	k 위에서 받아놓고 또 받아서 계속 틀린거 레전드
+*	cost가 long long 이므로 INF도 long long으로
+*/
+
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <queue>
+#include <vector>
+using namespace std;
+
+#define MAX 100000
+
+typedef long long ll;
+typedef struct {
+	ll l;
+	int v;
+}vlen;
+
+const ll INF = 0x7f7f7f7f7f7f;
+
+int n, m, k;
+vector <vlen> v[MAX + 2];
+ll len[MAX + 2];
+
+class cmp {
+public:
+	bool operator()(vlen a, vlen b) {
+		if (a.l == b.l) return a.v > b.v;
+		return a.l > b.l;
+	}
+};	priority_queue<vlen, vector<vlen>, cmp> pq;
+
+void dijk() {
+	while (!pq.empty()) {
+		vlen cur = pq.top(); pq.pop();
+
+		if (len[cur.v] != cur.l) continue;
+
+		for (auto nxt : v[cur.v]) {
+			nxt.l += cur.l;
+
+			if (len[nxt.v] > nxt.l) {
+				len[nxt.v] = nxt.l;
+				pq.push(nxt);
+			}
+		}
+	}
+}
+
+int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+
+	cin >> n >> m >> k;
+
+	fill(len + 1, len + n + 1, INF);
+	
+	while (m--) {
+		int u;
+		vlen a;
+		cin >> a.v >> u >> a.l;
+		v[u].push_back(a);
+	}
+
+	int bd;
+	while (k--) {
+		cin >> bd;
+		len[bd] = 0;
+		pq.push({ len[bd], bd });
+	}
+
+	dijk();
+
+	int idx = max_element(len + 1, len + n + 1) - len;
+	cout << idx << "\n" << len[idx];
+
+	return 0;
+}
