@@ -27,6 +27,11 @@
 만약 함수에서 값을 바꾸고 싶다면 Reference(**&**) 사용.
  ex. void swap(int &a, int &b)
 
+### 4. 소수점
+소수점 자리 조절 방법
+cout << fixed; cout.precision(n); -> 소수점 n 자리까지 표현 (소수점 n+1 자리를 반올림 맨 뒤가 0이라도 0까지 나옴)
+cout.unsetf(ios::fixed); -> fixed 고정 풀기
+
 # STL
 ----
 ### 1. Algorithm
