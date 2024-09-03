@@ -44,8 +44,8 @@ cout.unsetf(ios::fixed); -> fixed 고정 풀기
 void TurnCW(){
  int arr[n][n], tmp_arr[n][n];
  for(int i = 0; i < n; i++)
-  for(int j = 0; j < n; j++)
-   arr[j][4-i] = tmp[i][j];
+   for(int j = 0; j < n; j++)
+     arr[j][4-i] = tmp[i][j];
 }
 ```
 
