@@ -26,6 +26,30 @@
 ### 4. 함수 인자
 함수에 값을 넘겨줄 때 주소를 넘겨주지 않는 한 값이 복사되어 넘어가므로 함수에서 값을 바꿔도 이전 함수의 값이 변하지 않음.
 
+#### 1) Call by Value
+함수가 인수로 부터 전달받은 값을 복사하여 처리 -> 함수 내에서 값을 변경해도 원본 값이 변하지 않음
+
+2차원 배열의 경우 포인터를 넘기므로 Call by Value로 전달이 안됨 이를 해결하기 위해 2차원 벡터를 사용
+
+```cpp
+#include <vector>
+#include <iostream>
+using namespace std;
+void func(vector<vector<int> >v){ //call by value
+	v[0][1] = 20;
+	return ;
+}
+int main(){
+	vector<vector<int> > v;
+	vector<int> tmp = {1,2,3,4,5};
+	v.push_back(tmp);
+	func(v);
+	cout<<v[0][1]<<"\n";
+    //print 2
+}
+```
+
+#### 2) Call by Reference
 만약 함수에서 값을 바꾸고 싶다면 Reference(**&**) 사용.
  ex. void swap(int &a, int &b)
 
