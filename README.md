@@ -48,6 +48,7 @@ void TurnCW(){
      arr[j][n-i-1] = tmp[i][j];
 }
 ```
+<img src="./img/TurnCW.PNG"/>
 
  #### 2) 반시계
   배열의 크기가 4x4인 2차원 배열을 시계방향으로 돌릴 시 [0][0] -> [3][0] , [1][2] -> [1][1] 으로 변하는걸 볼 수 있음 즉 [i][j] -> [n-j-1][i]이 됨
@@ -60,6 +61,7 @@ void TurnCW(){
      arr[n-j-1][i] = tmp[i][j];
 }
 ```
+<img src="./img/TurnCCW.PNG"/>
 
 # STL
 ----
