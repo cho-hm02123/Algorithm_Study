@@ -31,7 +31,11 @@
 
 ### 5. 소수점
 소수점 자리 조절 방법
-'''cpp  cout << fixed; cout.precision(n);  ''' -> 소수점 n 자리까지 표현 (소수점 n+1 자리를 반올림 맨 뒤가 0이라도 0까지 나옴)
+
+'''cpp  
+cout << fixed; cout.precision(n);  
+''' 
+-> 소수점 n 자리까지 표현 (소수점 n+1 자리를 반올림 맨 뒤가 0이라도 0까지 나옴)
 cout.unsetf(ios::fixed); -> fixed 고정 풀기
 
 ### 6. 시계, 반시계
