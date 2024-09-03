@@ -53,7 +53,7 @@ void TurnCW(){
   #### 2) 반시계
    배열의 크기가 4x4인 2차원 배열을 시계방향으로 돌릴 시 [0][0] -> [3][0] , [1][2] -> [1][1] 으로 변하는걸 볼 수 있음 즉 [i][j] -> [n-j-1][i]이 됨
 
-  ```cpp
+```cpp
 void TurnCCW(){
  int arr[n][n], tmp_arr[n][n];
  for(int i = 0; i < n; i++)
@@ -66,14 +66,13 @@ void TurnCCW(){
   #### 3) 특정구간 회전
    배열의 크기가 nxn인 2차원 배열의 특정 구간을 회전시킬 경우 기준점(회전하고자 하는 사각형의 좌측 상단)을 더해준다.
 
-    ```cpp
+```cpp
 void TurnStrdCW(int y1, int x1){
  int arr[n][n], tmp_arr[n][n];
  for(int i = 0; i < n; i++)
    for(int j = 0; j < n; j++)
      arr[j+y1][n-i+x1-1] = tmp[i+y1][j+x1];
 }
-
 int main(){
  int mid = n/2;
  TurnStrdCW(0,0);  //  좌상
