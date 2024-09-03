@@ -74,11 +74,13 @@ void TurnStrdCW(int y1, int x1){
      arr[j+y1][n-i+x1-1] = tmp[i+y1][j+x1];
 }
 
-int mid = n/2;
-TurnStrdCW(0,0);  //  좌상
-TurnStrdCW(0,mid+1);  //  우상
-TurnStrdCW(mid+1,0);  //  좌하
-TurnStrdCW(mid+1,mid+1);  //  우하
+int main(){
+ int mid = n/2;
+ TurnStrdCW(0,0);  //  좌상
+ TurnStrdCW(0,mid+1);  //  우상
+ TurnStrdCW(mid+1,0);  //  좌하
+ TurnStrdCW(mid+1,mid+1);  //  우하
+}
 ```
 <img src="./img/TurnStrdCW.PNG"/>
 
