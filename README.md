@@ -73,8 +73,6 @@ void TurnStrdCW(int y1, int x1){
    for(int j = 0; j < n; j++)
      arr[j+y1][n-i+x1-1] = tmp[i+y1][j+x1];
 }
-```
-
 int mid = n/2;
 TurnStrdCW(0,0);  //  좌상
 TurnStrdCW(0,mid+1);  //  우상
