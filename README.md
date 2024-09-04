@@ -322,7 +322,7 @@ STL로는 set, multiset, map 사용 (insert, erase, find, update 모두 O(logN)�
 
  #### 표현법
  #### 1) 인접행렬
- 두 정점 사이의 간선이 하나 이하일 때 사용 O(v^2^)
+ 두 정점 사이의 간선이 하나 이하일 때 사용 O(v<sup>2</sup> )
 
  ex) 방향 그래프 arr[1][2] = 1; 이면 이건 정점 2 -> 정점 3인 그래프
 
