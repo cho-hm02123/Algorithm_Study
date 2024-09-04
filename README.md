@@ -32,8 +32,8 @@
  	struct examplemem{
   		int x, y;
     		char idx;
-      	}
-       ```
+      	}```
+       
        int가 2개 char가 1개 이므로 4byte * 2 + 1byte * 1 = 9byte
 
 #### 3) 최적화
