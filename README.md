@@ -3,7 +3,7 @@
 # Basic
 ----
 ### 1. 시간복잡도
-#####  O(1) < O(logN) < O(N) < O(NlogN) < O(n^2^) < O(2^N^) < O(N!)
+#####  O(1) < O(logN) < O(N) < O(NlogN) < O(n<sup>2</sup> ) < O(2<sup>N</sup> ) < O(N!)
 #####  1초에 약 1억
 
 ### 2. 자료형
