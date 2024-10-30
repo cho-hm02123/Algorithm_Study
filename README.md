@@ -109,6 +109,7 @@ void TurnCCW(){
 
   #### 3) 특정구간 회전
    배열의 크기가 nxn인 2차원 배열의 특정 구간을 회전시킬 경우 기준점(회전하고자 하는 사각형의 좌측 상단)을 더해준다.
+  
    ex) BOJ [마법사 상어와 파이어스톰](https://github.com/cho-hm02123/Algorithm_Study/blob/main/Beakjoon/A/20058.cpp)
 
 ```cpp
