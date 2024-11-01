@@ -80,6 +80,8 @@ cout << fixed; cout.precision(n); -> 소수점 n 자리까지 표현 (소수점 
 
 cout.unsetf(ios::fixed); -> fixed 고정 풀기
 
+ex) Softeer [성적평균](https://github.com/cho-hm02123/Algorithm_Study/blob/main/Softeer/Lv3/%EC%84%B1%EC%A0%81%ED%8F%89%EA%B7%A0.cpp)
+
 ### 6. 시계, 반시계
   #### 1) 시계
    배열의 크기가 4x4인 2차원 배열을 시계방향으로 돌릴 시 [0][0] -> [0][4] , [1][2] -> [2][2] 으로 변하는걸 볼 수 있음 즉 [i][j] -> [j][n-i-1]이 됨
