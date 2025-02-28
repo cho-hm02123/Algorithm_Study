@@ -137,7 +137,7 @@ int main(){
   #### 1) 순열 O(N)
   순서 O, 중복 X
 
-  ```cpp
+```cpp
 #include <iostream>
 #include <algorithm>  // next_permutation을 포함함
 #include <cmath>
@@ -172,7 +172,7 @@ int main() {
   #### 3) 조합
   순서 X, 중복 X
 
-    ```cpp
+```cpp
 #include <iostream>
 #include <algorithm>  // next_permutation을 포함함
 #include <cmath>
