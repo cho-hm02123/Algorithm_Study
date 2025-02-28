@@ -132,8 +132,10 @@ int main(){
 <img src="./img/TurnStrdCW.PNG"/>
 
 ### 6. 순열, 조합
-  #### 1) 순열
-  중복 원소를 제외하고 오름차순 정렬 필수
+중복 원소를 제외하고 오름차순 정렬 필수
+
+  #### 1) 순열 O(N)
+  순서 O, 중복 X
 
   ```cpp
 #include <iostream>
@@ -141,23 +143,66 @@ int main(){
 #include <cmath>
 using namespace std;
 
+#define N 3
+#define R 2
+
+int arr[N] = { 1, 2, 3 };
+bool flag[3];
+
 int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
 
-	int arr[3] = { 1, 2, 3 };
+	// 뽑는 개수 만큼 1, 나머지 0
+	fill(flag, flag + N, 0);
+	for (int i = 0; i < R; i++) flag[i] = 1;
 
 	do {
-		// 여기 뭐 개수를 구하고 싶다던가 하면 cnt++ 이런거 넣어주면 됨
-		for (int i = 0; i < 3; i++)
-			cout << arr[i] << " ";
+		for (int i = 0; i < N; i++)
+			if (flag[i])
+				cout << arr[i] << " ";
 		cout << "\n";
-	} while (next_permutation(arr, arr + 3));
+	} while (next_permutation(arr, arr + N));
 }
 ```
 
   #### 2) 중복 순열
+
+  #### 3) 조합
+  순서 X, 중복 X
+
+    ```cpp
+#include <iostream>
+#include <algorithm>  // next_permutation을 포함함
+#include <cmath>
+using namespace std;
+
+#define N 3
+#define R 2
+
+int arr[N] = { 1, 2, 3 };
+int flag[3];
+
+int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+
+	// 뽑는 개수 만큼 0, 나머지 1 (0이 먼저임)
+	fill(flag, flag + N, 1);
+	for (int i = 0; i < R; i++) flag[i] = 0;  
+
+	do {
+		for (int i = 0; i < N; i++)
+			if (!flag[i])
+				cout << arr[i] + flag[i] << " ";
+		cout << "\n";
+	} while (next_permutation(flag, flag + N));  // flag로 돌리는거 주의
+}
+```
+
+  #### 4) 중복 조합
 
 # STL
 ----
