@@ -167,9 +167,44 @@ int main() {
 }
 ```
 
-  #### 2) 중복 순열
+  #### 2) 중복 순열 (DFS 활용)
+  순서 O, 중복 O
 
-  #### 3) 조합
+```cpp
+#include <iostream>
+using namespace std;
+
+#define N 3
+#define R 2
+
+int arr[N] = { 1, 2, 3 };
+int perm[R];  // 중복 순열 저장 배열
+
+void duplicatePermutation(int depth) {
+    if (depth == R) {
+        for (int i = 0; i < R; i++)
+            cout << perm[i] << " ";
+        cout << "\n";
+        return;
+    }
+
+    for (int i = 0; i < N; i++) {
+        perm[depth] = arr[i];  // 현재 위치에 숫자 저장
+        duplicatePermutation(depth + 1);  // 다음 단계 탐색
+    }
+}
+
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+
+    duplicatePermutation(0);
+    return 0;
+}
+```
+
+  #### 3) 조합 (DFS 활용)
   순서 X, 중복 X
 
 ```cpp
@@ -202,7 +237,42 @@ int main() {
 }
 ```
 
-  #### 4) 중복 조합
+  #### 4) 중복 조합 
+  순서 X, 중복 O
+```cpp
+#include <iostream>
+using namespace std;
+
+#define N 3
+#define R 2
+
+int arr[N] = { 1, 2, 3 };
+int comb[R];  // 중복 조합 저장 배열
+
+void duplicateCombination(int depth, int idx) {
+    if (depth == R) {
+        for (int i = 0; i < R; i++)
+            cout << comb[i] << " ";
+        cout << "\n";
+        return;
+    }
+    
+    for (int i = idx; i < N; i++) {  // `idx`부터 시작 -> 같은 숫자 여러 번 사용 가능
+        comb[depth] = arr[i];
+        duplicateCombination(depth + 1, i);  // 같은 인덱스 i를 넘겨줌 (중복 선택 가능)
+    }
+}
+
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+
+    duplicateCombination(0, 0);
+    return 0;
+}
+
+```
 
 # STL
 ----
