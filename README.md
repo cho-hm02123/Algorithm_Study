@@ -141,17 +141,23 @@ int main(){
 #include <cmath>
 using namespace std;
 
-int main(){
- ios_base::sync_with_stdio(0);
- cin.tie(0);
- cout.tie(0);
+int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
 
- int arr[3] = {1, 2, 3}
+	int arr[3] = { 1, 2, 3 };
 
- do{
- } while(next_permutation(arr, arr+3);
+	do {
+		// 여기 뭐 개수를 구하고 싶다던가 하면 cnt++ 이런거 넣어주면 됨
+		for (int i = 0; i < 3; i++)
+			cout << arr[i] << " ";
+		cout << "\n";
+	} while (next_permutation(arr, arr + 3));
 }
 ```
+
+  #### 2) 중복 순열
 
 # STL
 ----
