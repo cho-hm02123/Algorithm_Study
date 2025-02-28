@@ -131,6 +131,28 @@ int main(){
 ```
 <img src="./img/TurnStrdCW.PNG"/>
 
+### 6. 순열, 조합
+  #### 1) 순열
+  중복 원소를 제외하고 오름차순 정렬 필수
+
+  ```cpp
+#include <iostream>
+#include <algorithm>  // next_permutation을 포함함
+#include <cmath>
+using namespace std;
+
+int main(){
+ ios_base::sync_with_stdio(0);
+ cin.tie(0);
+ cout.tie(0);
+
+ int arr[3] = {1, 2, 3}
+
+ do{
+ } while(next_permutation(arr, arr+3);
+}
+```
+
 # STL
 ----
 ### 1. Algorithm
