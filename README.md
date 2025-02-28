@@ -32,7 +32,7 @@ int arr[n]의 경우 4byte * n = 4nbyte
 ```cpp
 struct examplemem{
 int x, y;
-har idx;
+char idx;
 }
  ```
  int가 2개 char가 1개 이므로 4byte * 2 + 1byte * 1 = 9byte
